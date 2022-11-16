@@ -12,7 +12,7 @@ export class PrevisoesComponent implements OnInit{
   ngOnInit(): void{
     this.previsoesService
     .registrarComponenteComoInteressado().subscribe(previsoes => {
-      console.log('estamos no componente', previsoes)
+      //console.log('estamos no componente', previsoes)
     })
   }
 
@@ -22,6 +22,10 @@ export class PrevisoesComponent implements OnInit{
 
   pesquisar(): void{
     this.previsoesService.obterPrevisoes(this.cidade)
+  }
+
+  armazenarNoHistorico(){
+    this.previsoesService.armazenarNoHistorico(this.cidade, null, "link de teste")
   }
 
 }

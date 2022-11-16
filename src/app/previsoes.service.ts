@@ -25,9 +25,20 @@ export class PrevisoesService {
   obterPrevisoes(cidade: string): void {
     this.url =
       `${this.url}?q=${cidade}&appid=${this.appid}`
-    this.httpClient.get(this.url).subscribe((resposta) => {
+    this.httpClient.get(this.url).subscribe((resposta: any) => {
+      const icon = resposta.list[0].weather[0].icon
+      //'http://openweathermap.org/img/wn/10d.png'
+      this.armazenarNoHistorico(cidade, null, `http://openweathermap.org/img/wn/${icon}.png`)
       this.previsoesSubject.next(resposta)
+
     })
+  }
+  armazenarNoHistorico(cidade: string, data: string, link: string){
+    const linkOracle = "https://g3e99fc358a3389-jp1k665t7zehy4vs.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/paoo_previsoes/"
+    this.httpClient.post(linkOracle, {cidade: cidade, link_previsao: link}).subscribe(res => {
+      console.log('Resposta Oracle')
+      console.log(res)
+    })  
   }
   registrarComponenteComoInteressado() {
     return this.previsoesSubject.asObservable()
