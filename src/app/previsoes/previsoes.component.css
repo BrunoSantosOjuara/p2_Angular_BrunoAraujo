@@ -6,8 +6,9 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body{
-    padding-top: 1%;
-    padding-bottom: 1%;
+    
+    padding: 1%;
+    
         background-color: blue; /* For browsers that do not support gradients */
       background-image: linear-gradient(to bottom right, cyan, darkblue);
     

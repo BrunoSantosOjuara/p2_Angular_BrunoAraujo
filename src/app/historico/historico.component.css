@@ -2,3 +2,25 @@
 @import "~primeng/resources/themes/saga-blue/theme.css";
 @import "~primeng/resources/primeng.min.css";
 @import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+    padding: 1%;
+
+        background-color: blue; /* For browsers that do not support gradients */
+      background-image: linear-gradient(to bottom right, cyan, darkblue);
+      text-align: center;
+    
+}
+
+div{
+     
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: white;
+    width: 30%;
+    margin-left: 35%;
+}
+
+button{
+     margin-bottom: 1%;
+}
