@@ -1,17 +1,32 @@
+
+<body>
 <!-- input[type=text][placeholder="Cidade"] -->
 <input 
   type="text"
-  placeholder="Cidade"
+  placeholder="Digite o nome da Cidade"
   [(ngModel)]="cidade">
 <!-- button[type=button]{OK} -->
 <button
   type="button"
   (click)="pesquisar()">
-  OK
-</button>
-<button
-  type="button"
-  (click)="armazenarNoHistorico()">
-  Armazenar no histórico
+  Buscar
 </button>
 
+
+  <p-table [value]="previsoes">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>cidade</th>
+          <th>temperatura Minima</th>
+
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-previsoes>
+      <tr>
+          <td>{{previsoes.cidade}}</td>
+          <td>{{previsoes.temperaturaMin}}</td>
+      
+      </tr>
+  </ng-template>
+</p-table> 
+</body>

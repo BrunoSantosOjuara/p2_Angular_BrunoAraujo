@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {Previsoes} from 'src/app/model/Previsoes';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

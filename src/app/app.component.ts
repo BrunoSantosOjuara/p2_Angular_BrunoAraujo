@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Previsoes} from 'src/app/model/Previsoes';
+
+
 
 @Component({
   selector: 'app-root',

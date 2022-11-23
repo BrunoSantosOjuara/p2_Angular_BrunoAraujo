@@ -1,0 +1,17 @@
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.title {
+    background-color: blue; /* For browsers that do not support gradients */
+      background-image: linear-gradient(to bottom right, cyan, darkblue);
+    
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
