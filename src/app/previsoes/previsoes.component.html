@@ -16,16 +16,20 @@
   <p-table [value]="previsoes">
   <ng-template pTemplate="header">
       <tr>
-          <th>cidade</th>
-          <th>temperatura Minima</th>
-
+          <th style="text-align: center">Cidade</th>
+          <th style="text-align: center">Data e Hora</th>
+          <th style="text-align: center">Icone</th>
+          <th style="text-align: center">Temperatura Mínima</th>
+          <th style="text-align: center">Temperatura Máxima</th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-previsoes>
       <tr>
-          <td>{{previsoes.cidade}}</td>
-          <td>{{previsoes.temperaturaMin}}</td>
-      
+          <td style="text-align: center">{{previsoes.cidade}}</td>
+          <td style="text-align: center">{{previsoes.data}}</td>
+          <td style="text-align: center"><img src={{previsoes.icone}}  height=50 width=50></td>
+          <td style="text-align: center">{{previsoes.temperaturaMin}}°C</td>
+          <td style="text-align: center">{{previsoes.temperaturaMax}}°C</td>
       </tr>
   </ng-template>
 </p-table> 

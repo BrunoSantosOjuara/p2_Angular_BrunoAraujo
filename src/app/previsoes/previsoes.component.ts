@@ -27,7 +27,7 @@ export class PrevisoesComponent implements OnInit{
 
   constructor(private previsoesService: PrevisoesService){
     this.previsoes = this.previsoesService.getPrevisoes()
-    console.log('aqui')
+    console.log(this.previsoes)
 
 
   }
