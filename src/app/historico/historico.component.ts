@@ -14,13 +14,14 @@ import {TableModule} from 'primeng/table';
 
 export class HistoricoComponent implements OnInit{
   historic: Historic[];
+  
 
   ngOnInit():void { 
   
   }
 
   constructor(private historicoService: HistoricoService){
-  this.historic = this.historicoService.getHistoric()
+    this.historic = this.historicoService.getHistoric()
 
   }
   buscarHistorico(): void{

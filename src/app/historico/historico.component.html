@@ -1,26 +1,27 @@
 <!-- input[type=text][placeholder="Cidade"] -->
 <body>
-  <div> Abaixo está o seu historico de pesquisas Salvas</div>
+  <div> Abaixo está o seu historico de pesquisas</div>
 
     <button
+      class="btn btn-light"
       type="button"
       (click)="buscarHistorico()">
-      Meu Histórico
+      Mostrar Histórico
     </button>
 
 
     <p-table [value]="historic">
       <ng-template pTemplate="header">
           <tr>
-              <th style="text-align: center">cidade</th>
-              <th style="text-align: center">datapesquisa</th>
+              <th style="text-align: center">Cidade</th>
+              <th style="text-align: center">Data da Pesquisa</th>
 
           </tr>
       </ng-template>
       <ng-template pTemplate="body" let-historic>
           <tr>
               <td style="text-align: center">{{historic.cidade}}</td>
-              <td style="text-align: center">{{historic.temperaturaMin}}</td>
+              <td style="text-align: center">{{historic.datapesquisa}}</td>
           
           </tr>
       </ng-template>
