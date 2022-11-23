@@ -36,7 +36,7 @@ export class PrevisoesService {
      
       for (let i=0;i<=39;i++) {
         this.previsoes.push( {cidade: resposta.city.name, 
-                              data:resposta.list[i].dt_txt,
+                              data:`${resposta.list[i].dt_txt.substr(8,2)}/${resposta.list[i].dt_txt.substr(5,2)}/${resposta.list[i].dt_txt.substr(0,4)}${resposta.list[i].dt_txt.substr(10,6)}`,
                               icone:`https://openweathermap.org/img/wn/${resposta.list[i].weather[0].icon}.png`,
                               temperaturaMin: resposta.list[i].main.temp_min, 
                               temperaturaMax: resposta.list[i].main.temp_max })
