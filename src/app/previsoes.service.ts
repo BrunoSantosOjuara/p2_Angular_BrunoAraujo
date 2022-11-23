@@ -25,7 +25,7 @@ export class PrevisoesService {
   previsoes: Previsoes[] = [ ]
 
   public obterPrevisoes(cidade: string): void {
-    this.url =
+      this.url =
       `https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&appid=${this.appid}&units=metric`
     this.httpClient.get(this.url).subscribe((resposta: any) => {
       //const icon = resposta.list[0].weather[0].icon
@@ -34,8 +34,8 @@ export class PrevisoesService {
      //'http://openweathermap.org/img/wn/10d.png'
       this.armazenarNoHistorico(cidade, dtaux)
      
-      for (let i=0;i<=39;i++) {
-        this.previsoes.push( {cidade: resposta.city.name, 
+      for (let i=39;i>=0;i--) {
+        this.previsoes.unshift( {cidade: resposta.city.name, 
                               data:`${resposta.list[i].dt_txt.substr(8,2)}/${resposta.list[i].dt_txt.substr(5,2)}/${resposta.list[i].dt_txt.substr(0,4)}${resposta.list[i].dt_txt.substr(10,6)}`,
                               icone:`https://openweathermap.org/img/wn/${resposta.list[i].weather[0].icon}.png`,
                               temperaturaMin: resposta.list[i].main.temp_min, 
